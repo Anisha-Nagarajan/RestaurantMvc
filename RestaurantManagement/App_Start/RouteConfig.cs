@@ -25,7 +25,7 @@ namespace RestaurantManagement
             routes.MapRoute(
                name: "RestaurantModel",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "Restaurant", action = "Model", id = UrlParameter.Optional }
+               defaults: new { controller = "Restaurant", action = "ModelView", id = UrlParameter.Optional }
            );
         }
     }
