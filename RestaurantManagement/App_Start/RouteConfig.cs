@@ -18,12 +18,12 @@ namespace RestaurantManagement
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
                 );
             routes.MapRoute(
-                name: "Default",
+                name: "RestaurantDataPassing",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Restaurant", action = "DataPassing", id = UrlParameter.Optional }
             );
             routes.MapRoute(
-               name: "Default",
+               name: "RestaurantModel",
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "Restaurant", action = "Model", id = UrlParameter.Optional }
            );
