@@ -13,7 +13,7 @@ namespace RestaurantManagementRepository
         static RestaurantRepository()
         {
             RestaurantEntity restaurant;
-            restaurant=new RestaurantEntity(1, "YumPlum", "Yumplum");
+            restaurant=new RestaurantEntity(1, "YumPlum", "Yumplum cake factory");
             RestaurantDetails.Add(restaurant);
             restaurant = new RestaurantEntity(2, "SpiceKing", "SpiceKing");
             RestaurantDetails.Add(restaurant);
