@@ -15,7 +15,7 @@ namespace RestaurantManagementRepository
             RestaurantEntity restaurant;
             restaurant=new RestaurantEntity(1, "YumPlum", "Yumplum cake factory");
             RestaurantDetails.Add(restaurant);
-            restaurant = new RestaurantEntity(2, "SpiceKing", "SpiceKing");
+            restaurant = new RestaurantEntity(2, "SpiceKing", "SpiceKing is the King of Spices");
             RestaurantDetails.Add(restaurant);
         }
         public static IEnumerable<RestaurantEntity> Restaurants( )
