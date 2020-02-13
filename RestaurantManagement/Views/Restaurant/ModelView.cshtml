@@ -1,0 +1,32 @@
+﻿@model IEnumerable<RestaurantManagementEntity.RestaurantEntity>
+
+@{
+    ViewBag.Title = "ModelView";
+}
+
+
+
+<h2>ModelView</h2>
+<table>
+    <tr>
+        <td>Restaurant Id</td>
+        <td>Restaurant Name</td>
+        <td>Restaurant Description</td>
+    </tr>
+    @foreach (var restaurant in Model)
+    {
+        <tr>
+            <td>
+                @restaurant.Id
+            </td>
+            <td>
+                @restaurant.Name
+            </td>
+            <td>
+                @restaurant.Description
+            </td>
+        </tr>
+
+    }
+</table>
+
