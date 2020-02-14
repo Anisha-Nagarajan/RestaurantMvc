@@ -17,5 +17,6 @@ namespace RestaurantManagementEntity
             this.Name = Name;
             this.Description = Description;
         }
+        public RestaurantEntity() { }
     }
 }

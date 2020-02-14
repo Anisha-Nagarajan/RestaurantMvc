@@ -22,7 +22,23 @@ namespace RestaurantManagement.Controllers
             ViewBag.restaurants = RestaurantDetails;
             ViewData["Restaurants"] = RestaurantDetails;
             TempData["Restaurants"] = RestaurantDetails;
+            return RedirectToAction("TempDataCheck");
+        }
+        public ActionResult TempDataCheck()
+        {
             return View();
+        }
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(RestaurantEntity restaurant)
+        {
+            RestaurantRepository.Add(restaurant);
+            TempData["Message"] = "Added Succesfully";
+            RedirectToAction("Index");
+            return View(restaurant);
         }
     }
 }

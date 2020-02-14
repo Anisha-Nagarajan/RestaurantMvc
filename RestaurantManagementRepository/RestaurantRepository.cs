@@ -22,5 +22,9 @@ namespace RestaurantManagementRepository
         {
             return RestaurantDetails;
         }
+        public static void Add(RestaurantEntity restaurant)
+        {
+            RestaurantDetails.Add(restaurant);
+        }
     }
 }
