@@ -156,6 +156,7 @@
     <Content Include="Views\Restaurant\DataPassing.cshtml" />
     <Content Include="Views\Restaurant\ModelView.cshtml" />
     <Content Include="Views\Restaurant\Create.cshtml" />
+    <Content Include="Views\Restaurant\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

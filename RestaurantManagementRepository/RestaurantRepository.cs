@@ -26,5 +26,25 @@ namespace RestaurantManagementRepository
         {
             RestaurantDetails.Add(restaurant);
         }
+        public static RestaurantEntity GetRestaurantById(int id)
+        {
+            return RestaurantDetails.Find(res => res.Id == id);
+         
+        }
+        public static void Update(RestaurantEntity restaurant)
+        {
+            RestaurantEntity updatedRestaurant = RestaurantDetails.Find(res => res.Id == restaurant.Id);
+            updatedRestaurant.Id = restaurant.Id;
+            updatedRestaurant.Name = restaurant.Name;
+            updatedRestaurant.Description = restaurant.Description;
+        }
+        public static void Delete(int resId)
+        {
+            RestaurantEntity restaurant = GetRestaurantById(resId);
+            if (restaurant != null)
+            {
+                RestaurantDetails.Remove(restaurant);
+            }
+        }
     }
 }

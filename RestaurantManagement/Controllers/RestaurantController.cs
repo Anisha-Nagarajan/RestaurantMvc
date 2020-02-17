@@ -40,5 +40,25 @@ namespace RestaurantManagement.Controllers
             RedirectToAction("Index");
             return View(restaurant);
         }
+        public ActionResult Edit(int id)
+        {
+            RestaurantEntity restaurant = RestaurantRepository.GetRestaurantById(id);
+            return View(restaurant);
+        }
+    
+        [HttpPost]
+        public ActionResult Update(RestaurantEntity restaurant)
+        {
+            RestaurantRepository.Update(restaurant);
+            TempData["Message"] = "Updated Succesfully";
+            return RedirectToAction("Index");
+           
+        }
+        public ActionResult Delete(int id)
+        {
+            RestaurantRepository.Delete(id);
+            TempData["Message"] = "Deleted Succesfully";
+            return RedirectToAction("Index");
+        }
     }
 }
