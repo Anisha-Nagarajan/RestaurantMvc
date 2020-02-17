@@ -33,12 +33,16 @@ namespace RestaurantManagement.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(RestaurantEntity restaurant)
+        [ActionName("Create")]
+        public ActionResult Create_Post()
         {
+            RestaurantEntity restaurant = new RestaurantEntity();
+            UpdateModel(restaurant);
+
             RestaurantRepository.Add(restaurant);
             TempData["Message"] = "Added Succesfully";
-            RedirectToAction("Index");
-            return View(restaurant);
+            return RedirectToAction("Index");
+        
         }
         public ActionResult Edit(int id)
         {
