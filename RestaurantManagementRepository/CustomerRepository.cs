@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestaurantManagementEntity;
+using static RestaurantManagementEntity.CustomerEntity;
 
 namespace RestaurantManagementRepository
 {
@@ -13,10 +14,10 @@ namespace RestaurantManagementRepository
         static CustomerRepository()
         {
             CustomerEntity customer;
-            //customer = new CustomerEntity(1,"Akhil","aki123","akhilnagarajan@gmail.com","Male","Anbu Nagar","Salem",8903723179);
-            //CustomerDetails.Add(customer);
-            //customer = new CustomerEntity(2,"Saranya", "saran123","saranyanatarajan@gmail.com", "Female", "Gandhi Nagar", "Salem",8903723179);
-            //CustomerDetails.Add(customer);
+            customer = new CustomerEntity(1, "Akhil", "aki123", "akhilnagarajan@gmail.com", "Male", "Anbu Nagar",(CustomerCity)Enum.Parse(typeof(CustomerCity), "Salem"), 8903723179);
+            CustomerDetails.Add(customer);
+            customer = new CustomerEntity(2, "Saranya", "saran123", "saranyanatarajan@gmail.com", "Female", "Gandhi Nagar", (CustomerCity)Enum.Parse(typeof(CustomerCity), "Salem"), 8903723179);
+            CustomerDetails.Add(customer);
         }
         public static IEnumerable<CustomerEntity> Customers()
         {
@@ -25,6 +26,19 @@ namespace RestaurantManagementRepository
         public static void Add(CustomerEntity customer)
         {
             CustomerDetails.Add(customer);
+        }
+        public static bool Login(UserEntity User)
+        {
+            bool loginStatus = false;
+            foreach(CustomerEntity customer in CustomerDetails)
+            {
+                if ((User.Name.Equals(customer.Name)) && (User.Password.Equals(customer.Password)))
+                {
+                    loginStatus = true;
+                    break;
+                }
+            }
+            return loginStatus;
         }
     }
 }

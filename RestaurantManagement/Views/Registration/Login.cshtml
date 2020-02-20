@@ -1,0 +1,38 @@
+﻿@model RestaurantManagementEntity.UserEntity
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("Login", "Registration", FormMethod.Post))
+{
+  <table>
+      <tr>
+          <td>
+              @Html.Label("User Name")
+          </td>
+          <td>
+              @Html.TextBoxFor(Model => Model.Name)
+              @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+          </td>
+          
+      </tr>
+      <tr>
+          <td>
+              @Html.Label("Password")
+          </td>
+          <td>
+              @Html.PasswordFor(Model => Model.Password)
+              @Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "text-danger" })
+          </td>
+          
+      </tr>
+      <tr>
+          <td>
+              <input type="submit" />
+          </td>
+      </tr>
+
+  </table>
+}

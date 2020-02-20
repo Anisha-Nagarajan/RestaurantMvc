@@ -15,20 +15,47 @@ namespace RestaurantManagement.Controllers
         {
             return View();
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(UserEntity user)
+        {
+            if (ModelState.IsValid)
+            {
+                bool loginStatus = CustomerRepository.Login(user);
+                if (loginStatus == true)
+                {
+
+                    return RedirectToAction("Index", "Restaurant");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
+            
+        }
         public ActionResult Create()
         {
             return View();
         }
         [HttpPost]
      
-        public ActionResult Create_Post()
+        public ActionResult Create(CustomerEntity customer)
         {
-            CustomerEntity customer = new CustomerEntity();
-            UpdateModel(customer);
-            CustomerRepository.Add(customer);
-            TempData["Message"] = "Added Succesfully";
-            return RedirectToAction("Index");
+           
+                CustomerRepository.Add(customer);
+                TempData["Message"] = "Added Succesfully";
+                return RedirectToAction("Login");
+           
 
         }
+       
     }
 }
