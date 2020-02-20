@@ -1,0 +1,77 @@
+﻿@model RestaurantManagementEntity.CustomerEntity
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "Customer", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model=>Model.Id)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.Id)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Name)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Password)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Email)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Gender)
+            </td>
+            <td>
+                @Html.RadioButtonFor(Model => Model.Gender, "Male")Male
+                @Html.RadioButtonFor(Model => Model.Gender, "Female")Female
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Address)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Address)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.City)
+            </td>
+            <td>
+                @Html.DropDownListFor(Model => Model.City, new SelectList(Enum.GetValues(typeof(City))), "Select City");
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.PhoneNumber)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.PhoneNumber)
+            </td>
+        </tr>
+    </table>
+}
