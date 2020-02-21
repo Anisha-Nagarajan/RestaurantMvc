@@ -11,6 +11,7 @@ namespace RestaurantManagement.Controllers
     public class RegistrationController : Controller
     {
         // GET: Registration
+        
         public ActionResult Index()
         {
             return View();
@@ -20,11 +21,11 @@ namespace RestaurantManagement.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(UserEntity user)
+        public ActionResult Login(string userName,string password)
         {
             if (ModelState.IsValid)
             {
-                bool loginStatus = CustomerRepository.Login(user);
+                bool loginStatus = CustomerRepository.Login(userName,password);
                 if (loginStatus == true)
                 {
 
@@ -46,13 +47,19 @@ namespace RestaurantManagement.Controllers
             return View();
         }
         [HttpPost]
-     
+ 
         public ActionResult Create(CustomerEntity customer)
         {
-           
+            if (ModelState.IsValid)
+            {
                 CustomerRepository.Add(customer);
                 TempData["Message"] = "Added Succesfully";
                 return RedirectToAction("Login");
+            }
+            else
+            {
+                return View();
+            }
            
 
         }

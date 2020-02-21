@@ -161,6 +161,7 @@
     <Content Include="Views\Shared\RestaurantReviewMaster.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Registration\Login.cshtml" />
+    <Content Include="Views\Shared\_Partial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

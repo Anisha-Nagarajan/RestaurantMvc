@@ -20,7 +20,7 @@ namespace RestaurantManagement
             routes.MapRoute(
                   name: "RegisterRouting",
                   url: "{controller}/{action}/{id}",
-                  defaults: new { controller = "Registration", action = "Create", id = UrlParameter.Optional }
+                  defaults: new { controller = "Registration", action = "SignUp", id = UrlParameter.Optional }
                   );
             routes.MapRoute(
                 name: "RestaurantDataPassing",

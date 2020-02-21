@@ -27,12 +27,12 @@ namespace RestaurantManagementRepository
         {
             CustomerDetails.Add(customer);
         }
-        public static bool Login(UserEntity User)
+        public static bool Login(string userName,string password)
         {
             bool loginStatus = false;
             foreach(CustomerEntity customer in CustomerDetails)
             {
-                if ((User.Name.Equals(customer.Name)) && (User.Password.Equals(customer.Password)))
+                if ((userName.Equals(customer.Name)) && (password.Equals(customer.Password)))
                 {
                     loginStatus = true;
                     break;
