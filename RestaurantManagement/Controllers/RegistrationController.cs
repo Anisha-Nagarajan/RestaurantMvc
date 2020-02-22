@@ -21,11 +21,11 @@ namespace RestaurantManagement.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Login(string userName,string password)
+        public ActionResult Login(UserEntity user)
         {
             if (ModelState.IsValid)
             {
-                bool loginStatus = CustomerRepository.Login(userName,password);
+                bool loginStatus = CustomerRepository.Login(user);
                 if (loginStatus == true)
                 {
 
