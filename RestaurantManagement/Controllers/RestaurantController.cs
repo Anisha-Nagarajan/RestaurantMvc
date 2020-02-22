@@ -44,14 +44,14 @@ namespace RestaurantManagement.Controllers
             return RedirectToAction("Index");
         
         }
-        public ActionResult Edit([Bind(Exclude = "Description")]RestaurantEntity res)
+        public ActionResult Edit(int id)
         {
-            RestaurantEntity restaurant = RestaurantRepository.GetRestaurantById(res.Id);
+            RestaurantEntity restaurant = RestaurantRepository.GetRestaurantById(id);
             return View(restaurant);
         }
     
         [HttpPost]
-        public ActionResult Update(RestaurantEntity restaurant)
+        public ActionResult Update([Bind(Exclude ="Description")]RestaurantEntity restaurant)
         {
             RestaurantRepository.Update(restaurant);
             TempData["Message"] = "Updated Succesfully";
