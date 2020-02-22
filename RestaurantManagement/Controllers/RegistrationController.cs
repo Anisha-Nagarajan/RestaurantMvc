@@ -48,7 +48,7 @@ namespace RestaurantManagement.Controllers
         }
         [HttpPost]
  
-        public ActionResult Create(CustomerEntity customer)
+        public ActionResult Create([Bind(Exclude ="Address")]CustomerEntity customer)
         {
             if (ModelState.IsValid)
             {

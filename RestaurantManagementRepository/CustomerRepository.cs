@@ -14,7 +14,7 @@ namespace RestaurantManagementRepository
         static CustomerRepository()
         {
             CustomerEntity customer;
-            customer = new CustomerEntity(1, "Akhil", "aki123", "akhilnagarajan@gmail.com", "Male", "Anbu Nagar",(CustomerCity)Enum.Parse(typeof(CustomerCity), "Salem"), 8903723179);
+            customer = new CustomerEntity(1, "Akhil", "akhil123", "akhilnagarajan@gmail.com", "Male", "Anbu Nagar",(CustomerCity)Enum.Parse(typeof(CustomerCity), "Salem"), 8903723179);
             CustomerDetails.Add(customer);
             customer = new CustomerEntity(2, "Saranya", "saran123", "saranyanatarajan@gmail.com", "Female", "Gandhi Nagar", (CustomerCity)Enum.Parse(typeof(CustomerCity), "Salem"), 8903723179);
             CustomerDetails.Add(customer);

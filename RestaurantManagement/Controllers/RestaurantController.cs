@@ -44,9 +44,9 @@ namespace RestaurantManagement.Controllers
             return RedirectToAction("Index");
         
         }
-        public ActionResult Edit(int id)
+        public ActionResult Edit([Bind(Exclude = "Description")]RestaurantEntity res)
         {
-            RestaurantEntity restaurant = RestaurantRepository.GetRestaurantById(id);
+            RestaurantEntity restaurant = RestaurantRepository.GetRestaurantById(res.Id);
             return View(restaurant);
         }
     

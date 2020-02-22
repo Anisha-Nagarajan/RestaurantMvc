@@ -27,7 +27,6 @@ namespace RestaurantManagementEntity
         [RegularExpression("^[a-zA-Z0-9]*$", ErrorMessage = "Only Alphabets and Numbers allowed.")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Password is Required. It cannot be empty")]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)\S{8,15}$", ErrorMessage = "Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number")]
         public string Password { get; set; }
         [Required(ErrorMessage = "Confirmation Password is required.")]
         [Compare("Password", ErrorMessage = "Password and Confirmation Password must match.")]
